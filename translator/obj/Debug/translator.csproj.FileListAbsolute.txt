@@ -1,0 +1,6 @@
+C:\dyskD\projektySW\translator\translator\bin\Debug\translator.exe.config
+C:\dyskD\projektySW\translator\translator\bin\Debug\translator.exe
+C:\dyskD\projektySW\translator\translator\bin\Debug\translator.pdb
+C:\dyskD\projektySW\translator\translator\obj\Debug\translator.csprojResolveAssemblyReference.cache
+C:\dyskD\projektySW\translator\translator\obj\Debug\translator.exe
+C:\dyskD\projektySW\translator\translator\obj\Debug\translator.pdb
