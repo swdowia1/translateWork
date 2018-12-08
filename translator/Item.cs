@@ -1,17 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace translator
+﻿namespace translator
 {
     public class Item
     {
-        public string Root { get; set; }
-        public string Name { get; set; }
-        public string Property { get; set; }
-        public string Translation { get; set; }
+        public string Root
+        {
+            get; set;
+        }
+        public string Name
+        {
+            get; set;
+        }
+        public string Property
+        {
+            get; set;
+        }
+        public string Translation
+        {
+            get; set;
+        }
+        [System.Xml.Serialization.XmlIgnore]
+        public string Def
+        {
+            get; set;
+        }
         public Item()
         {
             Root = "";
@@ -20,7 +31,7 @@ namespace translator
             Translation = "";
 
         }
-        public Item(string _Root,string _Name,string _Property,string _Translation )
+        public Item(string _Root, string _Name, string _Property, string _Translation)
         {
             Root = _Root;
             Name = _Name;

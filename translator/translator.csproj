@@ -45,10 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="classTranslate.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Localization.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropertyType.cs" />
     <Compile Include="XmlExtension.cs" />
   </ItemGroup>
   <ItemGroup>

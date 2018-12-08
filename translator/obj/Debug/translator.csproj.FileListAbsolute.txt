@@ -4,3 +4,10 @@ C:\dyskD\projektySW\translator\translator\bin\Debug\translator.pdb
 C:\dyskD\projektySW\translator\translator\obj\Debug\translator.csprojResolveAssemblyReference.cache
 C:\dyskD\projektySW\translator\translator\obj\Debug\translator.exe
 C:\dyskD\projektySW\translator\translator\obj\Debug\translator.pdb
+C:\dysk_d\projekty\translateWork\translator\bin\Debug\translator.exe.config
+C:\dysk_d\projekty\translateWork\translator\bin\Debug\translator.exe
+C:\dysk_d\projekty\translateWork\translator\bin\Debug\translator.pdb
+C:\dysk_d\projekty\translateWork\translator\obj\Debug\translator.csprojAssemblyReference.cache
+C:\dysk_d\projekty\translateWork\translator\obj\Debug\translator.csproj.CoreCompileInputs.cache
+C:\dysk_d\projekty\translateWork\translator\obj\Debug\translator.exe
+C:\dysk_d\projekty\translateWork\translator\obj\Debug\translator.pdb
