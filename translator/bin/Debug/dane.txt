@@ -1,1 +1,2 @@
-colData;Data;Date;c;t
+tpSaldaZmian;Salda zmian;Sald English;t
+tpRaportyKasowe;Salda podsumowanie;Salda summery;t
