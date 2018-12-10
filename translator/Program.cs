@@ -14,6 +14,32 @@ namespace translator
 
         static void Main(string[] args)
         {
+            if (args.Length==1)
+            {
+                Console.BackgroundColor = ConsoleColor.Blue;
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("wersja z plikiem parametry");
+                Console.WriteLine("\tnazwa root");
+                Console.WriteLine("\tnazwa pliku");
+                Console.WriteLine("\tod ktorego numeru(domyslnie 1)");
+                Console.WriteLine("\n\n\tw pliku kolumny:t");
+                Console.WriteLine("\tnazwa kontrolki");
+                Console.WriteLine("\twersja polska");
+                Console.WriteLine("\twersja angielska");
+                Console.WriteLine("\tWłasciwość: (c)aption (t)ext inna");
+                Console.BackgroundColor = ConsoleColor.Gray;
+                Console.WriteLine("\n\nPojedyncza property");
+                Console.WriteLine("\tnazwa root:");
+                Console.WriteLine("\tnazwa kontrolki:");
+                Console.WriteLine("\tod ktorego numeru");
+                Console.WriteLine("\twersja polska");
+
+                Console.WriteLine("\twersja angielska");
+                Console.WriteLine("\tWłasciwość:Caption,Text");
+
+                Console.ResetColor();
+                return;
+            }
             /*
              
              args
@@ -23,9 +49,14 @@ namespace translator
             2 od ktoregonumeru
              
              */
-            int numerstart = int.Parse(args[2]);
 
-            int ilosctlumaczeni = args.Length - 1;
+            int numerstart = 2;
+            if (args.Length>2)
+            {
+                numerstart = int.Parse(args[2]);
+            }
+
+            
             eol2 = eol1 + eol1;
             StringBuilder sb = new StringBuilder();
 
@@ -34,46 +65,80 @@ namespace translator
             l.LocalizationUi = new List<Item>();
 
             List<Item> listaTranslate = new List<Item>();
-            string[] linie = File.ReadAllLines(args[1]);
-            /*
-             * nazwa controlki
-             * wersja polska 
-             * wersja angielska
-             * property
-             
-             */
-            foreach (var item in linie)
-            {
 
-                string[] kolumny = item.Split(';');
-                string property = kolumny[0];
-                string def = kolumny[1];
-                string tr = kolumny[2];
-                int ilosc = kolumny.Length;
-                for (int i = 3; i < ilosc; i++)
+            if (args.Length < 3)
+            {
+                string[] linie = File.ReadAllLines(args[1]);
+                /*
+                 * nazwa controlki
+                 * wersja polska 
+                 * wersja angielska
+                 * property
+
+                 */
+                foreach (var item in linie)
                 {
-                    Item a = new Item();
-                    a.Name = property;
-                    a.Root = root;
-                    a.Def = def;
-                    a.Translation = tr;
-                    string type = kolumny[i].ToLower();
-                    switch (type)
+
+                    string[] kolumny = item.Split(';');
+                    string property = kolumny[0];
+                    string def = kolumny[1];
+                    string tr = kolumny[2];
+                    int ilosc = kolumny.Length;
+                    if (ilosc < 4)
                     {
-                        case "c":
-                            a.Property = "Caption";
-                            break;
-                        case "t":
-                            a.Property = "Text";
-                            break;
-                        default:
-                            break;
+                        System.Windows.Forms.MessageBox.Show("error :" + item);
                     }
-                    listaTranslate.Add(a);
+                    for (int i = 3; i < ilosc; i++)
+                    {
+                        Item a = new Item();
+                        a.Name = property;
+                        a.Root = root;
+                        a.Def = def;
+                        a.Translation = tr;
+                        string type = kolumny[i].ToLower();
+                        switch (type)
+                        {
+                            case "c":
+                                a.Property = "Caption";
+                                break;
+                            case "t":
+                                a.Property = "Text";
+                                break;
+                            default:
+                                break;
+                        }
+                        listaTranslate.Add(a);
+
+                    }
 
                 }
-
+                
             }
+            else
+                {
+                /*
+
+            args
+
+           0 nazwa root
+           1 nazwa danych
+           2 od ktoregonumeru
+           3 wersja polska
+           4 wersja angielska
+           5 property;
+
+            */
+                Item ItemOne = new Item();
+                numerstart = int.Parse(args[2]);
+                ItemOne.Root = root;
+                ItemOne.Name = args[1];
+                ItemOne.Def = args[3];
+                ItemOne.Translation = args[4];
+                ItemOne.Property = args[5];
+                listaTranslate.Add(ItemOne);
+                }
+
+           
             File.WriteAllText("tlumaczenia.txt", listaTranslate.Serialize());
 
             sb = new StringBuilder();

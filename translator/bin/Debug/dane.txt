@@ -1,2 +1,9 @@
-tpSaldaZmian;Salda zmian;Sald English;t
-tpRaportyKasowe;Salda podsumowanie;Salda summery;t
+colData;Data;Date;c
+colPlatnoscFormaSymbol;Płatność;Payment;c
+colWalutaSymbol;Waluta;Currency;c
+colSaldoPoczatkowe;Saldo początkowe;Beginning balance;c
+colSaldoPrzychody;Przychody;Income;c
+colSaldoRozchody;Rozchody;Oncome;c
+colSaldoKonwersje;Konwersje;Conversion;c
+colUtarg;Utarg;Revenue;c
+colSaldoKoncowe;Saldo Końcowe;Final balance;c
